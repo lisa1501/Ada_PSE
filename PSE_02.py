@@ -10,39 +10,33 @@ def get_student_data(student_list):
                   student_data["name"]= student
                   student_data["id"]=(i*2)+id_start_with
                   all_student_data.append(student_data)
-      
       return all_student_data
       
+my_students_list=["Mike","Jared","Alison","Heidi","","Heidi",55]
+students_data= get_student_data(my_students_list)
+print(students_data)
 
-# my_students_list=["Mike","Jared","Alison","Heidi","","Heidi",55]
-my_students_list=[]
-a=get_student_data(my_students_list)
-print(a)
 def get_id_by_name(name,student_list):
       if not student_list:
             return None
       student_data=get_student_data(student_list)
-      print(student_data)
-     
       for student in student_data:
-            
-                  if student["name"]==name:
-                        return student["id"]
+           if student["name"]==name:
+                  return student["id"]
       
+student_id=get_id_by_name("Mike",my_students_list)
+print(student_id)
 
-my_name=get_id_by_name("Mike",my_students_list)
-print(my_name)
 def get_name_by_id(id,student_list):
       if not student_list:
             return None
       student_data=get_student_data(student_list)
-      
       for student in student_data:
-           
-                  if student["id"]==id:
-                        return student["name"]
-my_id=get_name_by_id(5071109000,my_students_list)
-print(my_id)
+           if student["id"]==id:
+                  return student["name"]
+
+student_name=get_name_by_id(5071109000,my_students_list)
+print(student_name)
 
 
 
